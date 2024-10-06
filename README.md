@@ -36,8 +36,12 @@ The most effective solution came in the form of a **Bidirectional LSTM model**, 
 #### <a name="_6sx6g0pvivph"></a>**Implementation Strategy**
 The Bidirectional LSTM model was built using several key components:
 
-**Input Preprocessing**: The masked word (e.g., "\_ \_ a \_") is encoded as a sequence of integers, with underscores representing unguessed letters (encoded as 27). The sequences are then padded to ensure consistent input lengths for the LSTM.![](Aspose.Words.fda7a323-022f-4632-8145-420028088877.002.png)
-**Model Architecture**: The model is structured with multiple bidirectional LSTM layers followed by a dense layer for letter classification.![](Aspose.Words.fda7a323-022f-4632-8145-420028088877.003.png)
+**Input Preprocessing**: The masked word (e.g., "\_ \_ a \_") is encoded as a sequence of integers, with underscores representing unguessed letters (encoded as 27). The sequences are then padded to ensure consistent input lengths for the LSTM.
+
+![](Aspose.Words.fda7a323-022f-4632-8145-420028088877.002.png)
+**Model Architecture**: The model is structured with multiple bidirectional LSTM layers followed by a dense layer for letter classification.
+
+![](Aspose.Words.fda7a323-022f-4632-8145-420028088877.003.png)
 
 1. **Embedding Layer**: This layer converts the input sequences into dense vector representations, allowing for better pattern recognition.
 1. **Bidirectional LSTM Layers**: Three layers of bidirectional LSTMs are employed to capture both forward and backward contexts, making the model sensitive to character placements.
@@ -45,6 +49,7 @@ The Bidirectional LSTM model was built using several key components:
 1. **Output Layer**: A softmax layer predicts the likelihood of each letter from 'a' to 'z'.
 
 **Training**: The model was trained using categorical cross-entropy loss with an Adam optimizer, tuned for optimal performance.
+
 ![](Aspose.Words.fda7a323-022f-4632-8145-420028088877.004.png)**Performance**
 
 The Bidirectional LSTM model excelled by balancing prediction accuracy and computational efficiency. Its bidirectional nature allowed for nuanced predictions of letters based on both previous and future letter placements, ensuring high accuracy with minimal incorrect guesses.
